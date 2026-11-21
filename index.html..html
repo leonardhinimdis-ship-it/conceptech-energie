@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONCEPTECH-ÉNERGIE | Solide & Durable - BTP, Électricité & Énergie Solaire</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0B4A8F',      /* Bleu principal - Confiance & Professionnalisme */
+                            'blue-dark': '#073366',
+                            green: '#10B981',     /* Vert - Énergie Renouvelable & Solaire */
+                            'green-dark': '#059669',
+                            red: '#EF4444',       /* Rouge - Dynamisme & BTP */
+                            'red-dark': '#DC2626',
+                            light: '#F8FAFC',
+                            dark: '#0F172A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #0B4A8F 0%, #10B981 50%, #EF4444 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-overlay {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.65) 0%, rgba(11, 74, 143, 0.82) 100%);
+        }
+        .floating-whatsapp {
+            animation: pulse-green 2s infinite;
+        }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+    </style>
+</head>
+<body class="font-sans bg-brand-light text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Top Bar Bar Top -->
+    <div class="bg-brand-dark text-slate-300 text-xs sm:text-sm py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6">
+                <a href="mailto:conceptechenergie@gmail.com" class="hover:text-brand-green transition flex items-center gap-2">
+                    <i class="fa-solid fa-envelope text-brand-green"></i> conceptechenergie@gmail.com
+                </a>
+                <a href="https://wa.me/237690242425" target="_blank" class="hover:text-brand-green transition flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-brand-green text-base"></i> +237 690 24 24 25
+                </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <span class="text-slate-400"><i class="fa-solid fa-location-dot text-brand-red mr-1"></i> Cameroun & International</span>
+                <span class="text-brand-green font-semibold">● Services 24/7 & Devis Gratuit</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <img src="logo.png" alt="Logo CONCEPTECH-ÉNERGIE" class="w-12 h-12 sm:w-14 sm:h-14 object-contain rounded-full shadow-sm group-hover:scale-105 transition transform duration-200">
+                    <div class="flex flex-col">
+                        <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-brand-dark">
+                            CONCEPTECH<span class="text-brand-blue">-</span><span class="text-brand-green">ÉNERGIE</span>
+                        </span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">BTP • Électricité • Solaire</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-slate-700">
+                    <a href="#accueil" class="hover:text-brand-blue transition py-2 border-b-2 border-transparent hover:border-brand-blue">Accueil</a>
+                    <a href="#apropos" class="hover:text-brand-blue transition py-2 border-b-2 border-transparent hover:border-brand-blue">À propos</a>
+                    <a href="#services" class="hover:text-brand-blue transition py-2 border-b-2 border-transparent hover:border-brand-blue">Services</a>
+                    <a href="#realisations" class="hover:text-brand-blue transition py-2 border-b-2 border-transparent hover:border-brand-blue">Réalisations</a>
+                    <a href="#contact" class="hover:text-brand-blue transition py-2 border-b-2 border-transparent hover:border-brand-blue">Contact</a>
+                </nav>
+
+                <!-- Devis Button -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="#devis" class="bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5 flex items-center gap-2 text-sm">
+                        <i class="fa-solid fa-file-signature"></i> Demander un devis
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-700 hover:text-brand-blue focus:outline-none p-2" aria-label="Menu">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 shadow-xl">
+            <a href="#accueil" class="mobile-link block py-2.5 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700">Accueil</a>
+            <a href="#apropos" class="mobile-link block py-2.5 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700">À propos</a>
+            <a href="#services" class="mobile-link block py-2.5 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700">Services</a>
+            <a href="#realisations" class="mobile-link block py-2.5 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700">Réalisations</a>
+            <a href="#contact" class="mobile-link block py-2.5 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700">Contact</a>
+            <a href="#devis" class="mobile-link block py-3 px-3 rounded-lg bg-brand-blue text-white font-bold text-center shadow-md">
+                <i class="fa-solid fa-file-signature mr-2"></i> Obtenir un Devis Gratuit
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="accueil" class="relative bg-slate-900 text-white min-h-[88vh] flex items-center justify-center overflow-hidden">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="hero_banner.jpg" alt="Panneaux solaires CONCEPTECH-ÉNERGIE" class="w-full h-full object-cover object-center opacity-50">
+                <div class="absolute inset-0 hero-overlay"></div>
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center lg:text-left">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 text-brand-green font-semibold text-xs sm:text-sm">
+                            <i class="fa-solid fa-shield-halved text-brand-green"></i> Expertise Technique & Innovation Durable
+                        </div>
+                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                            Solutions Innovantes en <span class="text-brand-green">Solaire</span>, <span class="text-brand-blue">Électricité</span> & <span class="text-brand-red">BTP</span>
+                        </h1>
+                        <p class="text-base sm:text-xl text-slate-300 max-w-2xl font-light">
+                            CONCEPTECH-ÉNERGIE conçoit, réalise et maintient vos infrastructures électriques, solaires et travaux de bâtiment avec une rigueur professionnelle exemplaire.
+                        </p>
+                        
+                        <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#devis" class="bg-brand-green hover:bg-brand-green-dark text-slate-950 font-extrabold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 text-center text-base">
+                                <i class="fa-solid fa-calculator mr-2"></i> Demander un Devis Gratuit
+                            </a>
+                            <a href="https://wa.me/237690242425" target="_blank" class="bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-xl border border-white/30 backdrop-blur-md transition text-center text-base flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-brand-green text-xl"></i> Discuter sur WhatsApp
+                            </a>
+                        </div>
+
+                        <!-- Highlights Badges -->
+                        <div class="pt-8 grid grid-cols-3 gap-4 border-t border-white/10 text-center">
+                            <div>
+                                <div class="text-2xl sm:text-3xl font-extrabold text-brand-green">100%</div>
+                                <div class="text-xs text-slate-400 uppercase tracking-wider font-medium mt-1">Solaire & Vert</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl sm:text-3xl font-extrabold text-brand-blue">10+</div>
+                                <div class="text-xs text-slate-400 uppercase tracking-wider font-medium mt-1">Années d'Expertise</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl sm:text-3xl font-extrabold text-brand-red">24/7</div>
+                                <div class="text-xs text-slate-400 uppercase tracking-wider font-medium mt-1">Assistance Technique</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Form Preview Card -->
+                    <div class="lg:col-span-5 hidden lg:block">
+                        <div class="bg-white text-slate-800 p-8 rounded-2xl shadow-2xl border border-slate-100">
+                            <h3 class="text-2xl font-bold mb-2 text-brand-dark flex items-center gap-2">
+                                <i class="fa-solid fa-bolt text-brand-blue"></i> Projet Express
+                            </h3>
+                            <p class="text-slate-500 text-sm mb-6">Recevez une estimation rapide de votre projet sous 24h.</p>
+                            
+                            <form id="hero-mini-form" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nom complet</label>
+                                    <input type="text" required placeholder="Votre nom" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Téléphone / WhatsApp</label>
+                                    <input type="tel" required placeholder="+237 ..." class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Domaine concerné</label>
+                                    <select class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none text-sm">
+                                        <option>Installation Solaire Photovoltaïque</option>
+                                        <option>Électricité Bâtiment / Industrielle</option>
+                                        <option>BTP & Travaux de Construction</option>
+                                        <option>Maintenance / Autre</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="w-full bg-brand-blue hover:bg-brand-blue-dark text-white font-bold py-3 rounded-lg shadow transition text-sm">
+                                    Envoyer la demande
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="apropos" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Image Grid -->
+                    <div class="relative">
+                        <div class="grid grid-cols-2 gap-4">
+                            <img src="realisation_solaire_onduleur.jpg" alt="Technicien qualifié Conceptech-Énergie sur installation onduleur solaire" class="rounded-2xl shadow-lg object-cover object-top h-64 w-full border-2 border-white hover:scale-[1.02] transition duration-300">
+                            <img src="realisation_solaire_panneaux.jpg" alt="Équipe Conceptech-Énergie posant des panneaux photovoltaïques" class="rounded-2xl shadow-lg object-cover object-center h-64 w-full mt-8 border-2 border-white hover:scale-[1.02] transition duration-300">
+                        </div>
+                        <!-- Central Logo Badge -->
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-2xl border-4 border-slate-100 hidden sm:flex items-center justify-center">
+                            <img src="logo.png" alt="Logo CONCEPTECH-ÉNERGIE" class="w-16 h-16 object-contain">
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 bg-brand-red text-white p-6 rounded-2xl shadow-xl hidden sm:block max-w-xs">
+                            <p class="font-extrabold text-3xl">100%</p>
+                            <p class="text-xs font-semibold uppercase tracking-wider mt-1">Engagés pour la qualité & la sécurité</p>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 text-brand-blue font-extrabold text-sm uppercase tracking-wider">
+                            <span class="w-8 h-1 bg-brand-blue rounded-full"></span> À propos de nous
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark leading-tight">
+                            CONCEPTECH-ÉNERGIE, Votre Partenaire Technique de Confiance
+                        </h2>
+                        <p class="text-slate-600 leading-relaxed">
+                            <strong>CONCEPTECH-ÉNERGIE</strong> est une entreprise moderne spécialisée dans l'ingénierie du BTP, les installations électriques basse et moyenne tension, ainsi que le déploiement d'énergies renouvelables (systèmes solaires autonomes et hybrides).
+                        </p>
+                        <p class="text-slate-600 leading-relaxed">
+                            Nous accompagnons les particuliers, les entreprises et les collectivités dans la réalisation de leurs projets de construction et de transition énergétique avec des solutions durables, sécurisées et économiquement rentables.
+                        </p>
+
+                        <!-- Features list -->
+                        <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                            <div class="flex items-start gap-3">
+                                <div class="bg-brand-blue/10 text-brand-blue p-2.5 rounded-lg">
+                                    <i class="fa-solid fa-check text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">Équipes Qualifiées</h4>
+                                    <p class="text-xs text-slate-500">Ingénieurs & techniciens certifiés.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="bg-brand-green/10 text-brand-green p-2.5 rounded-lg">
+                                    <i class="fa-solid fa-solar-panel text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">Matériel Garanti</h4>
+                                    <p class="text-xs text-slate-500">Composants certifiés aux normes.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="bg-brand-red/10 text-brand-red p-2.5 rounded-lg">
+                                    <i class="fa-solid fa-helmet-safety text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">Respect des Délais</h4>
+                                    <p class="text-xs text-slate-500">Gestion de projet rigoureuse.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="bg-slate-100 text-slate-700 p-2.5 rounded-lg">
+                                    <i class="fa-solid fa-headset text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">Service Après-Vente</h4>
+                                    <p class="text-xs text-slate-500">Suivi & maintenance continue.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-green font-extrabold text-sm uppercase tracking-wider">Nos domaines d'action</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2">Des Services d'Excellence pour Tous Vos Besoins</h2>
+                    <p class="text-slate-600 mt-4">Nous combinons savoir-faire artisanal et innovations technologiques pour délivrer des résultats irréprochables.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1: Solaire -->
+                    <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 border border-slate-100 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 bg-brand-green/10 text-brand-green rounded-xl flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-solar-panel"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">Installations Solaires</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Étude, dimensionnement et pose de systèmes photovoltaïques autonomes, pompage solaire et kits secours pour résidences et commerces.
+                            </p>
+                            <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-green"></i> Panneaux Haut Rendement</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-green"></i> Onduleurs & Batteries Lithium</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-green"></i> Pompage Solaire Agricole</li>
+                            </ul>
+                        </div>
+                        <a href="#devis" class="text-brand-green font-bold text-sm inline-flex items-center gap-2 hover:gap-3 transition">
+                            Demander un devis <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Service 2: Électricité -->
+                    <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 border border-slate-100 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 bg-brand-blue/10 text-brand-blue rounded-xl flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">Électricité Bâtiment & Industrielle</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Câblage complet, installation d'armoires électriques, rénovation aux normes de sécurité, domotique et éclairage public.
+                            </p>
+                            <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-blue"></i> Électricité Générale Bâtiment</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-blue"></i> Armoires & Autocâblage</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-blue"></i> Audit & Mise aux Normes</li>
+                            </ul>
+                        </div>
+                        <a href="#devis" class="text-brand-blue font-bold text-sm inline-flex items-center gap-2 hover:gap-3 transition">
+                            Demander un devis <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Service 3: BTP -->
+                    <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition transform hover:-translate-y-1 border border-slate-100 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 bg-brand-red/10 text-brand-red rounded-xl flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-building-user"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">BTP & Construction</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Gros œuvre, second œuvre, travaux de génie civil, rénovation de bâtiments et suivi rigoureux de chantiers de A à Z.
+                            </p>
+                            <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-red"></i> Construction Résidentielle & Pro</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-red"></i> Réhabilitation & Extension</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-red"></i> Maçonnerie & Finitions</li>
+                            </ul>
+                        </div>
+                        <a href="#devis" class="text-brand-red font-bold text-sm inline-flex items-center gap-2 hover:gap-3 transition">
+                            Demander un devis <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery / Réalisations Section -->
+        <section id="realisations" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-brand-blue font-extrabold text-sm uppercase tracking-wider">Portfolio</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2">Nos Réalisations Récentes</h2>
+                    <p class="text-slate-600 mt-4">Découvrez nos projets concrétisés avec rigueur et passion sur le terrain.</p>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="flex flex-wrap justify-center gap-3 mb-10">
+                    <button class="filter-btn active px-6 py-2.5 rounded-full font-bold text-sm transition bg-brand-blue text-white shadow-md" data-filter="all">Tous les projets</button>
+                    <button class="filter-btn px-6 py-2.5 rounded-full font-bold text-sm transition bg-slate-100 text-slate-700 hover:bg-slate-200" data-filter="solaire">Installations Solaires</button>
+                    <button class="filter-btn px-6 py-2.5 rounded-full font-bold text-sm transition bg-slate-100 text-slate-700 hover:bg-slate-200" data-filter="electricite">Électricité</button>
+                    <button class="filter-btn px-6 py-2.5 rounded-full font-bold text-sm transition bg-slate-100 text-slate-700 hover:bg-slate-200" data-filter="btp">BTP & Construction</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
+                    <!-- Item 1: Solaire - Pose Panneaux Solaires -->
+                    <div class="gallery-item solaire bg-slate-50 rounded-2xl overflow-hidden shadow-md border border-slate-100 transition transform hover:-translate-y-1 hover:shadow-xl group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="realisation_solaire_panneaux.jpg" alt="Installation de panneaux solaires photovoltaïques sur toiture" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/10b981/ffffff?text=Panneaux+Solaires';">
+                            <span class="absolute top-4 left-4 bg-brand-green text-slate-950 font-bold text-xs px-3 py-1 rounded-full shadow">Solaire</span>
+                            <span class="absolute top-4 right-4 bg-white/95 backdrop-blur text-brand-dark font-extrabold text-[11px] px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5">
+                                <i class="fa-solid fa-circle-check text-brand-green"></i> Réalisation Conceptech
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-brand-dark group-hover:text-brand-blue transition">Pose de Panneaux Solaires Photovoltaïques</h3>
+                            <p class="text-xs text-slate-500 mt-2">Installation sur toiture, fixation de châssis et raccordement de modules solaires haute performance par notre équipe technique qualifiée.</p>
+                            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs text-slate-500">
+                                <span><i class="fa-solid fa-solar-panel text-brand-green mr-1"></i> Énergie Photovoltaïque</span>
+                                <span class="font-semibold text-brand-green">En service</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Solaire & Électricité - Onduleur & Stockage -->
+                    <div class="gallery-item solaire electricite bg-slate-50 rounded-2xl overflow-hidden shadow-md border border-slate-100 transition transform hover:-translate-y-1 hover:shadow-xl group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="realisation_solaire_onduleur.jpg" alt="Installation onduleur solaire hybride Blue Carbon et coffret électrique" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0b4a8f/ffffff?text=Onduleur+Solaire';">
+                            <span class="absolute top-4 left-4 bg-brand-blue text-white font-bold text-xs px-3 py-1 rounded-full shadow">Solaire & Électricité</span>
+                            <span class="absolute top-4 right-4 bg-white/95 backdrop-blur text-brand-dark font-extrabold text-[11px] px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5">
+                                <i class="fa-solid fa-circle-check text-brand-green"></i> Réalisation Conceptech
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-brand-dark group-hover:text-brand-blue transition">Onduleur Hybride & Stockage Batterie</h3>
+                            <p class="text-xs text-slate-500 mt-2">Mise en place d'un onduleur hybride intelligent Blue Carbon avec coffret de protection électrique et batteries pour autonomie énergétique 24/7.</p>
+                            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs text-slate-500">
+                                <span><i class="fa-solid fa-bolt text-brand-blue mr-1"></i> Stockage & Régulation</span>
+                                <span class="font-semibold text-brand-blue">Système Autonome</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: BTP - Construction Villa / Bâtiment -->
+                    <div class="gallery-item btp bg-slate-50 rounded-2xl overflow-hidden shadow-md border border-slate-100 transition transform hover:-translate-y-1 hover:shadow-xl group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="realisation_btp_construction.jpg" alt="Chantier BTP construction villa moderne gros œuvre" class="w-full h-full object-cover object-[center_35%] group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/ef4444/ffffff?text=Chantier+BTP';">
+                            <span class="absolute top-4 left-4 bg-brand-red text-white font-bold text-xs px-3 py-1 rounded-full shadow">BTP & Construction</span>
+                            <span class="absolute top-4 right-4 bg-white/95 backdrop-blur text-brand-dark font-extrabold text-[11px] px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5">
+                                <i class="fa-solid fa-circle-check text-brand-green"></i> Réalisation Conceptech
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-brand-dark group-hover:text-brand-blue transition">Gros Œuvre & Structure Bâtiment Moderne</h3>
+                            <p class="text-xs text-slate-500 mt-2">Érection des maçonneries en agglos, coulage des colonnes et piliers en béton armé, linteaux et dalles avec respect rigoureux des plans d'ingénierie.</p>
+                            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs text-slate-500">
+                                <span><i class="fa-solid fa-trowel-bricks text-brand-red mr-1"></i> Génie Civil & BTP</span>
+                                <span class="font-semibold text-brand-red">Gros Œuvre</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Solaire - Pompage Solaire Agricole & Forage -->
+                    <div class="gallery-item solaire bg-slate-50 rounded-2xl overflow-hidden shadow-md border border-slate-100 transition transform hover:-translate-y-1 hover:shadow-xl group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="realisation_pompage_solaire.jpg" alt="Système de pompage solaire et forage agricole" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/10b981/ffffff?text=Pompage+Solaire';">
+                            <span class="absolute top-4 left-4 bg-brand-green text-slate-950 font-bold text-xs px-3 py-1 rounded-full shadow">Solaire & Eau</span>
+                            <span class="absolute top-4 right-4 bg-white/95 backdrop-blur text-brand-dark font-extrabold text-[11px] px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5">
+                                <i class="fa-solid fa-circle-check text-brand-green"></i> Réalisation Conceptech
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-brand-dark group-hover:text-brand-blue transition">Système de Pompage Solaire & Forage</h3>
+                            <p class="text-xs text-slate-500 mt-2">Alimentation autonome par générateur photovoltaïque pour pompe immergée, approvisionnement en eau et irrigation agricole.</p>
+                            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs text-slate-500">
+                                <span><i class="fa-solid fa-droplet text-brand-blue mr-1"></i> Forage & Irrigation</span>
+                                <span class="font-semibold text-brand-green">100% Solaire</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: Électricité - Bâtiment Administratif -->
+                    <div class="gallery-item electricite bg-slate-50 rounded-2xl overflow-hidden shadow-md border border-slate-100 transition transform hover:-translate-y-1 hover:shadow-xl group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="realisation_electricite_batiment.jpg" alt="Installation électrique et contrôle tableau de distribution bâtiment administratif" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0b4a8f/ffffff?text=Electricite+Batiment';">
+                            <span class="absolute top-4 left-4 bg-brand-blue text-white font-bold text-xs px-3 py-1 rounded-full shadow">Électricité</span>
+                            <span class="absolute top-4 right-4 bg-white/95 backdrop-blur text-brand-dark font-extrabold text-[11px] px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5">
+                                <i class="fa-solid fa-circle-check text-brand-green"></i> Réalisation Conceptech
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-brand-dark group-hover:text-brand-blue transition">Électricité & Éclairage Bâtiment Administratif</h3>
+                            <p class="text-xs text-slate-500 mt-2">Câblage de tableau divisionnaire, modernisation des circuits d'éclairage LED et diagnostic électrique approfondi de conformité.</p>
+                            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs text-slate-500">
+                                <span><i class="fa-solid fa-bolt text-brand-blue mr-1"></i> Contrôle & Conformité</span>
+                                <span class="font-semibold text-brand-blue">Basse Tension</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 6: BTP - Rénovation & Finitions -->
+                    <div class="gallery-item btp bg-slate-50 rounded-2xl overflow-hidden shadow-md border border-slate-100 transition transform hover:-translate-y-1 hover:shadow-xl group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="realisation_renovation_finition.jpg" alt="Rénovation et finitions extérieures villa contemporaine" class="w-full h-full object-cover object-[center_35%] group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/ef4444/ffffff?text=Renovation+BTP';">
+                            <span class="absolute top-4 left-4 bg-brand-red text-white font-bold text-xs px-3 py-1 rounded-full shadow">BTP & Finitions</span>
+                            <span class="absolute top-4 right-4 bg-white/95 backdrop-blur text-brand-dark font-extrabold text-[11px] px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5">
+                                <i class="fa-solid fa-circle-check text-brand-green"></i> Réalisation Conceptech
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-brand-dark group-hover:text-brand-blue transition">Rénovation & Finitions Clé en Main</h3>
+                            <p class="text-xs text-slate-500 mt-2">Dallage extérieur, parement en pierre naturelle, aménagements paysagers, peinture et second œuvre haut de gamme d'une résidence moderne.</p>
+                            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs text-slate-500">
+                                <span><i class="fa-solid fa-paint-roller text-brand-red mr-1"></i> Second Œuvre & Finition</span>
+                                <span class="font-semibold text-brand-red">Clé en main</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulaire de Devis Section -->
+        <section id="devis" class="py-20 bg-gradient-to-br from-brand-dark via-brand-blue-dark to-slate-900 text-white relative">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-12">
+                    <span class="text-brand-green font-extrabold text-sm uppercase tracking-wider">Demande de devis gratuite</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-2">Chiffrez Votre Projet Dès Aujourd'hui</h2>
+                    <p class="text-slate-300 mt-3 text-sm sm:text-base">Remplissez ce formulaire et notre équipe technique vous contactera avec une offre adaptée.</p>
+                </div>
+
+                <!-- Toast Notification Box -->
+                <div id="toast-success" class="hidden mb-8 p-4 rounded-xl bg-brand-green text-slate-950 font-bold shadow-lg flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-circle-check text-2xl"></i>
+                        <span>Votre demande de devis a été envoyée avec succès ! Notre équipe vous recontacte rapidement.</span>
+                    </div>
+                    <button onclick="document.getElementById('toast-success').classList.add('hidden')" class="text-slate-950 hover:text-white">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Form Card -->
+                <form id="devis-form" class="bg-white text-slate-800 p-6 sm:p-10 rounded-3xl shadow-2xl space-y-6">
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Nom & Prénom *</label>
+                            <input type="text" id="devis-nom" required placeholder="Ex: Jean Dupont" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-blue outline-none text-sm bg-slate-50">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Numéro Téléphone / WhatsApp *</label>
+                            <input type="tel" id="devis-tel" required placeholder="Ex: +237 600 00 00 00" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-blue outline-none text-sm bg-slate-50">
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Adresse E-mail</label>
+                            <input type="email" id="devis-email" placeholder="votreemail@domaine.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-blue outline-none text-sm bg-slate-50">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Type de prestation *</label>
+                            <select id="devis-type" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-blue outline-none text-sm bg-slate-50">
+                                <option value="Solaire">Installation Solaire Photovoltaïque</option>
+                                <option value="Électricité">Électricité Bâtiment ou Industrielle</option>
+                                <option value="BTP">BTP & Travaux de Construction</option>
+                                <option value="Maintenance">Maintenance & Dépannage</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Description du projet / Besoins *</label>
+                        <textarea id="devis-message" rows="4" required placeholder="Décrivez votre besoin (ex: Maison 4 pièces, puissance solaire souhaitée, superficie BTP...)" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-blue outline-none text-sm bg-slate-50"></textarea>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+                        <button type="submit" class="w-full sm:w-auto bg-brand-green hover:bg-brand-green-dark text-slate-950 font-extrabold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition text-center text-base flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Envoyer ma demande
+                        </button>
+                        <span class="text-xs text-slate-500">
+                            <i class="fa-solid fa-lock text-brand-green mr-1"></i> Données confidentielles & Réponse sous 24h
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-red font-extrabold text-sm uppercase tracking-wider">Contactez-nous</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2">Restons en Contact Direct</h2>
+                    <p class="text-slate-600 mt-4">Notre équipe est à votre disposition pour toute information ou devis sur-mesure.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- WhatsApp Direct Card -->
+                    <div class="bg-white p-8 rounded-2xl shadow-md border border-slate-100 text-center flex flex-col items-center">
+                        <div class="w-16 h-16 bg-green-100 text-brand-green rounded-full flex items-center justify-center text-3xl mb-4">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-brand-dark mb-2">WhatsApp Direct</h3>
+                        <p class="text-xs text-slate-500 mb-4">Discutez en direct avec nos techniciens.</p>
+                        <a href="https://wa.me/237690242425" target="_blank" class="text-brand-green font-extrabold text-lg hover:underline mb-4">
+                            +237 690 24 24 25
+                        </a>
+                        <a href="https://wa.me/237690242425" target="_blank" class="w-full bg-brand-green text-slate-950 font-bold py-2.5 rounded-xl text-xs uppercase tracking-wider shadow hover:opacity-90 transition">
+                            Lancer la discussion
+                        </a>
+                    </div>
+
+                    <!-- Email Direct Card -->
+                    <div class="bg-white p-8 rounded-2xl shadow-md border border-slate-100 text-center flex flex-col items-center">
+                        <div class="w-16 h-16 bg-blue-100 text-brand-blue rounded-full flex items-center justify-center text-3xl mb-4">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-brand-dark mb-2">Adresse E-mail</h3>
+                        <p class="text-xs text-slate-500 mb-4">Envoyez-nous vos cahiers de charges.</p>
+                        <a href="mailto:conceptechenergie@gmail.com" class="text-brand-blue font-extrabold text-sm hover:underline mb-4 break-all">
+                            conceptechenergie@gmail.com
+                        </a>
+                        <a href="mailto:conceptechenergie@gmail.com" class="w-full bg-brand-blue text-white font-bold py-2.5 rounded-xl text-xs uppercase tracking-wider shadow hover:opacity-90 transition">
+                            Envoyer un e-mail
+                        </a>
+                    </div>
+
+                    <!-- Horaires & Localisation -->
+                    <div class="bg-white p-8 rounded-2xl shadow-md border border-slate-100 text-center flex flex-col items-center">
+                        <div class="w-16 h-16 bg-red-100 text-brand-red rounded-full flex items-center justify-center text-3xl mb-4">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-brand-dark mb-2">Disponibilité</h3>
+                        <p class="text-xs text-slate-500 mb-2">Du Lundi au Samedi : 08h00 - 18h00</p>
+                        <p class="text-xs text-slate-500 mb-4">Service d'Urgence : 24h/24 & 7j/7</p>
+                        <a href="#devis" class="w-full bg-brand-red text-white font-bold py-2.5 rounded-xl text-xs uppercase tracking-wider shadow hover:opacity-90 transition">
+                            Demander une intervention
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-slate-400 pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+                <!-- Col 1 -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-white p-0.5 shadow-md flex items-center justify-center overflow-hidden">
+                            <img src="logo.png" alt="Logo CONCEPTECH-ÉNERGIE" class="w-full h-full object-contain">
+                        </div>
+                        <span class="text-xl font-extrabold text-white">
+                            CONCEPTECH<span class="text-brand-green">-ÉNERGIE</span>
+                        </span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Spécialiste de la conception, la réalisation et la maintenance des infrastructures BTP, réseaux électriques et installations solaires performantes.
+                    </p>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#accueil" class="hover:text-brand-green transition">Accueil</a></li>
+                        <li><a href="#apropos" class="hover:text-brand-green transition">À propos de l'entreprise</a></li>
+                        <li><a href="#services" class="hover:text-brand-green transition">Nos Services</a></li>
+                        <li><a href="#realisations" class="hover:text-brand-green transition">Galerie de Réalisations</a></li>
+                        <li><a href="#devis" class="hover:text-brand-green transition">Demander un Devis</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Services</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#services" class="hover:text-brand-green transition">Panneaux Solaires & Pompage</a></li>
+                        <li><a href="#services" class="hover:text-brand-green transition">Électricité Bâtiment & Tertiaire</a></li>
+                        <li><a href="#services" class="hover:text-brand-green transition">Génie Civil & BTP</a></li>
+                        <li><a href="#services" class="hover:text-brand-green transition">Maintenance & Dépannage</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Contacts Directs</h4>
+                    <div class="space-y-3 text-xs">
+                        <p class="flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-brand-green text-base"></i>
+                            <a href="https://wa.me/237690242425" target="_blank" class="hover:text-white">+237 690 24 24 25</a>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-brand-green"></i>
+                            <a href="mailto:conceptechenergie@gmail.com" class="hover:text-white">conceptechenergie@gmail.com</a>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-brand-red"></i>
+                            <span>Cameroun</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>&copy; <span id="year"></span> CONCEPTECH-ÉNERGIE. Tous droits réservés.</p>
+                <p class="flex items-center gap-1">
+                    Conçu avec <i class="fa-solid fa-heart text-brand-red"></i> pour des infrastructures durables.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Lightbox Modal for Realizations -->
+    <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="relative max-w-4xl w-full bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex flex-col items-center">
+            <button id="close-modal" class="absolute top-4 right-4 z-10 w-11 h-11 rounded-full bg-black/60 text-white hover:bg-brand-red flex items-center justify-center text-xl transition" aria-label="Fermer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="p-3 w-full flex flex-col items-center">
+                <img id="modal-img" src="" alt="Aperçu Réalisation" class="max-h-[75vh] w-auto max-w-full object-contain rounded-xl shadow-lg">
+                <div class="mt-4 text-center px-6 pb-2">
+                    <p id="modal-caption" class="text-white text-base font-bold"></p>
+                    <p class="text-xs text-brand-green font-semibold mt-1">● Réalisation officielle CONCEPTECH-ÉNERGIE</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/237690242425" target="_blank" class="floating-whatsapp fixed bottom-6 right-6 z-50 bg-brand-green text-slate-950 w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition transform" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Interactive JavaScript Logic -->
+    <script>
+        // Set dynamic year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Portfolio Gallery Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update button active state
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-blue', 'text-white', 'shadow-md');
+                    b.classList.add('bg-slate-100', 'text-slate-700');
+                });
+                btn.classList.remove('bg-slate-100', 'text-slate-700');
+                btn.classList.add('bg-brand-blue', 'text-white', 'shadow-md');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox Modal for Realizations
+        const imageModal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalCaption = document.getElementById('modal-caption');
+        const closeModal = document.getElementById('close-modal');
+
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.classList.add('cursor-pointer');
+            img.addEventListener('click', () => {
+                modalImg.src = img.src;
+                modalCaption.textContent = img.alt || "Réalisation CONCEPTECH-ÉNERGIE";
+                imageModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        if (closeModal) {
+            closeModal.addEventListener('click', () => {
+                imageModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            });
+        }
+        if (imageModal) {
+            imageModal.addEventListener('click', (e) => {
+                if (e.target === imageModal) {
+                    imageModal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && imageModal && !imageModal.classList.contains('hidden')) {
+                imageModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Devis Form Handling Simulation
+        const devisForm = document.getElementById('devis-form');
+        const toastSuccess = document.getElementById('toast-success');
+
+        devisForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const nom = document.getElementById('devis-nom').value;
+            const tel = document.getElementById('devis-tel').value;
+            const type = document.getElementById('devis-type').value;
+
+            // Show confirmation toast
+            toastSuccess.classList.remove('hidden');
+            toastSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Reset Form
+            devisForm.reset();
+        });
+
+        // Mini Hero Form Handling Simulation
+        const heroMiniForm = document.getElementById('hero-mini-form');
+        if (heroMiniForm) {
+            heroMiniForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert("Merci ! Votre demande rapide a été prise en compte. Nous vous recontactons immédiatement.");
+                heroMiniForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
